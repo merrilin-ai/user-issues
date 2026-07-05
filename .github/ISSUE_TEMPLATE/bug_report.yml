@@ -1,0 +1,141 @@
+name: Bug report
+description: Report a problem with Merrilin.ai
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Merrilin.ai. Issues in this repository are public. Please do not include passwords, API keys, private customer data, or other sensitive information.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I removed sensitive information from this report.
+          required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the issue.
+      placeholder: Merrilin.ai does...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Tell us exactly how to reproduce the problem.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: Which feature or area is affected?
+      description: Select every area related to this issue.
+      multiple: true
+      options:
+        - Sync
+        - Reader — page text
+        - PDF
+        - EPUB
+        - AI chat
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: ai-chat-details
+    attributes:
+      label: If this is about AI chat
+      description: Please paste the chat transcript or attach a screenshot/export if you can. Remove private or sensitive information first.
+      placeholder: Drag screenshots/files here, or paste the relevant AI chat messages.
+
+  - type: input
+    id: registered-user-id
+    attributes:
+      label: Registered user ID (optional)
+      description: If you are comfortable sharing it publicly, provide your Merrilin.ai registered user ID so we can investigate more quickly. Do not share passwords, API keys, or payment details.
+      placeholder: user_...
+
+  - type: dropdown
+    id: affected-platforms
+    attributes:
+      label: Where have you seen this issue?
+      description: Select every Merrilin.ai experience where you have reproduced or observed the problem.
+      multiple: true
+      options:
+        - iOS app
+        - Android app
+        - iOS web — Safari
+        - iOS web — Chrome
+        - iOS PWA
+        - Android PWA
+        - Desktop web — Chrome
+        - Desktop web — Firefox
+        - Desktop web — Safari
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: platform-details
+    attributes:
+      label: Device, OS, browser, and app details
+      description: Add version details for the selected experiences, if you know them.
+      placeholder: |
+        - iOS app: iPhone 15, iOS 18.5, app version 1.2.3
+        - Desktop web — Chrome: macOS 15.5, Chrome 126
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How severe is this issue for you?
+      options:
+        - Blocking all use
+        - Blocking a key workflow
+        - Workaround available
+        - Minor issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Screenshots, recordings, or logs
+      description: Attach any helpful files after removing sensitive information.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add anything else that may help us investigate.
